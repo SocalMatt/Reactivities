@@ -20,12 +20,12 @@ namespace Application.Activities
                 _context = context;
             }
 
-            public async Task<List<Activity>> Handle(Query request,
-              CancellationToken cancellationToken)
-            {
-                var activities = await _context.Activities.ToListAsync();
-                return activities;
-            }
+        public async Task<List<Activity>> Handle(Query request,
+            CancellationToken cancellationToken)
+        {
+            var activities = await _context.Activities.ToListAsync(cancellationToken);
+            return activities;
+        }
         }
     }
 }
